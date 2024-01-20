@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+  </head>
+
+  <body>
+    <section>
+      <div class="container">
+        <div class="user signinBx">
+          <div class="imgBx">
+            <img src="../images/access-denied.svg" alt="" />
+          </div>
+          <div class="formBx">
+            <form
+              action="/login"
+              method="post"
+              onsubmit="return false;"
+              id="myForm_login"
+            >
+              <h2>Sign In</h2>
+              <% if(error.length > 0) { %>
+              <p class="error"><%= error %></p>
+              <% } %>
+              <input type="text" name="username" placeholder="Username" />
+              <input type="password" name="password" placeholder="Password" />
+              <input
+                id="singinBtn"
+                type="submit"
+                name="loginBtn"
+                value="Login"
+              />
+              <p class="signup">
+                Don't have an account ?
+                <a id="formRbtn" href="#" onclick="toggleForm();">Sign Up.</a>
+              </p>
+            </form>
+          </div>
+        </div>
+        <div class="user signupBx">
+          <div class="formBx">
+            <form
+              action="/register"
+              method="post"
+              onsubmit="return false;"
+              id="myForm_register"
+            >
+              <h2>Create an account</h2>
+
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Username"
+              />
+              <% if (reg && reg.length > 0) { %>
+              <p class="error"><%= reg %></p>
+              <% } %>
+
+              <input type="email" name="email" placeholder="Email Address" />
+              <input
+                type="password"
+                name="password"
+                placeholder="Create Password"
+              />
+              <input type="password" name="" placeholder="Confirm Password" />
+              <input id="singupBtn" type="submit" name="" value="Sign Up" />
+              <p class="signup">
+                Already have an account ?
+                <a id="formLbtn" href="#" onclick="toggleForm();">Sign in.</a>
+              </p>
+            </form>
+          </div>
+          <div class="imgBx">
+            <img src="../images/sign-up-form.svg" alt="" />
+          </div>
+        </div>
+      </div>
+      <footer>
+        <p>
+          <span id="madebyText">Made by</span> <a href="https://github.com/eCodeVoyager" target="_blank">Ehsan</a> with
+          <span class="coffee-symbol">☕️</span>
+        </p>
+      </footer>
+    </section>
+  </body>
+
+  <script src="../javascripts/main.js"></script>
+</html>
